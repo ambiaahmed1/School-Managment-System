@@ -44,7 +44,6 @@ public class Main {
         Classroom englishClass = new Classroom(t1, studentList, 20, "English");
         Classroom scienceClass = new Classroom(t1, studentList, 20, "Science");
 
-
         englishClass.addStudent(s3);
 
         List<Classroom> classList = new ArrayList<Classroom>();
@@ -99,69 +98,41 @@ public class Main {
         college.updateStudentById(s1.getId(), "new Name123", 10);
         college.updateClassById(classList, englishClass.getId(), t1, studentList, 20, "Java");
 
-       // System.out.println(college.getClassList());
-       // System.out.println(college.getStudentList());
+        // System.out.println(college.getClassList());
+        // System.out.println(college.getStudentList());
 
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("What would you like to do?");
-            System.out.println();
-            System.out.println("1. Add Student\t\t\t\t\t5. Add Teacher\t\t\t\t\t 9.Add class");
-            System.out.println("2. Update Student\t\t\t\t6. Update Teacher\t\t\t\t 10.Update class");
-            System.out.println("3. Remove Student\t\t\t\t7. Remove Teacher\t\t\t\t 11.Remove class");
-            System.out.println("4. View Students\t\t\t\t8. View Teachers\t\t\t\t 12.View Class");
+            Menu.welcomeScreen();
 
-
-
-            System.out.println();
-            System.out.println("13. Add Students to Class\t\t15.Change School Name");
-            System.out.println("14. Get All Average Grade\t\t\t\t\t");
-
-
-            System.out.print("\nYour Selection: ");
             int selection = scanner.nextInt();
-
 
             switch (selection) {
                 case 1:
-                    System.out.println("Enter id: ");
-                    int id = scanner.nextInt();
-                    System.out.println("Enter name: ");
-                    String name = scanner.next();
-                    System.out.println("Enter grade: ");
-                    int grade = scanner.nextInt();
-                    studentList.add(new Student(name, grade));
-
-                    System.out.println("Student successfully added. Student count: " + college.getStudentListSize());
+                    Menu.menuPromptOne(scanner, college, studentList);
                     break;
                 case 2:
 
                     break;
                 case 3:
-                    System.out.println("Enter ID to remove: ");
-                    System.out.println(college.getAllStudents(studentList));
-                    int id0 = scanner.nextInt();
-                    college.removeStudentById(id0);
+                    Menu.menuPromptThree(scanner, studentList, college);
 
-                    System.out.println("Student successfully removed. Student count: " + college.getStudentListSize());
                     break;
 
                 case 4:
-                    System.out.println("All Students: " + college.getAllStudents(studentList));
+                    Menu.menuPromptFour(college, studentList);
                     break;
-                   /* System.out.println("Enter name: ");
-                    String name1 = scanner.next();
-                    System.out.println("Enter salary: ");
-                    int salary = scanner.nextInt();
-                    teacherList.add(new Teacher(name1, salary));
-                    System.out.println("Teacher successfully added. Teacher count: " + college.getTeacherListSize());
-                    break;*/
                 case 5:
+                    Menu.menuPromptFive(college, studentList, scanner);
+                    //Send student list
+                    //Select student
+                    //Login username/password
+                    //Pay fees
 
                     break;
                 case 6:
-                    System.out.println("All Teacher: " + college.getAllTeachers(teacherList));
+                    Menu.menuPromptSix(scanner, college, teacherList);
                     break;
                 case 7:
                     System.out.println("Enter Id to remove");
@@ -171,17 +142,19 @@ public class Main {
                     System.out.println("Student successfully removed. Teacher count: " + college.getTeacherListSize());
                     break;
                 case 8:
-                    System.out.println("All Teacher: " + college.getAllTeachers(teacherList));
+                    Menu.menuPromptEight(teacherList, college);
+
                     break;
                 case 9:
+                    Menu.menuPromptNine(college, teacherList);
                     break;
                 case 10:
                     break;
                 case 12:
-                    System.out.println("All Classes: " + college.getAllClasses(classList));
+                    Menu.menuPromptTwelve(college, classList);
                     break;
                 case 11:
-                    System.exit(0);
+                    Menu.menuPromptEleven(scanner, classList, college);
                     break;
 
                 default:

@@ -9,7 +9,7 @@ public class Student {
     private int grade;
     private int feesPaid;
     private int feesTotal;
-        private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
+    private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
 
     public Student(String name, int grade) {
         this.id = ID_GENERATOR.getAndIncrement();
