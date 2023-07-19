@@ -154,6 +154,11 @@ public class School {
         studentList.removeIf(student -> student.getId() == id);
         studentList.add(new Student(name, grade));
     }
+
+    public void updateTeacherById(int id, String name, int salary) {
+        teacherList.removeIf(teacher -> teacher.getId() == id);
+        teacherList.add(new Teacher(name, salary));
+    }
 /*
 
     public void addStudentToClass(int id, Student student) {

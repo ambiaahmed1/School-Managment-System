@@ -113,7 +113,7 @@ public class Main {
                     Menu.menuPromptOne(scanner, college, studentList);
                     break;
                 case 2:
-
+                    Menu.menuPrompTwo(scanner, college, studentList);
                     break;
                 case 3:
                     Menu.menuPromptThree(scanner, studentList, college);
@@ -135,20 +135,19 @@ public class Main {
                     Menu.menuPromptSix(scanner, college, teacherList);
                     break;
                 case 7:
-                    System.out.println("Enter Id to remove");
-                    System.out.println(college.getAllTeachers(teacherList));
-                    int id2 = scanner.nextInt();
-                    college.removeTeacherById(id2);
-                    System.out.println("Student successfully removed. Teacher count: " + college.getTeacherListSize());
+                    Menu.menuPrompSeven(scanner, college, teacherList);
                     break;
                 case 8:
                     Menu.menuPromptEight(teacherList, college);
 
                     break;
                 case 9:
-                    Menu.menuPromptNine(college, teacherList);
+                    //Menu.menuPromptNine(college, teacherList);
+                    Menu.menuPromptNine1(scanner, college, classList, teacherList, studentList);
                     break;
                 case 10:
+                    Menu.menuPromptTen(college, teacherList, scanner);
+
                     break;
                 case 12:
                     Menu.menuPromptTwelve(college, classList);
