@@ -21,6 +21,7 @@ public class Menu {
         System.out.println("14. Get All Average Grade\t\t\t\t\t");
         System.out.println("15. School Earnings Report\t\t\t\t\t");
         System.out.println("16. School Expense Report\t\t\t\t\t");
+        System.out.println("17. All School Data\t\t\t\t\t");
         System.out.print("\nYour Selection: ");
     }
 
@@ -102,6 +103,14 @@ public class Menu {
         college.removeClassById(id0);
 
         System.out.println("Student successfully removed. Student count: " + college.getAllClasses(classroomList));
+    }
+
+    public static void allSchoolData(School college, List<Classroom> classroomList, List<Student> studentList, List<Teacher> teacherList) {
+        System.out.println(college.getSchoolName());
+        System.out.println(college.getAllClasses(classroomList));
+        System.out.println(college.getAllTeachers(teacherList));
+        System.out.println(college.getAllStudents(studentList));
+        System.out.println(college.toString());
     }
 
     public static void menuPromptTwelve(School college, List<Classroom> classList) {

@@ -253,8 +253,16 @@ public class School {
         studentList.add(student);
     }
 
+    @Override
     public String toString() {
-        return "Total Money Earned " + getTotalMoneyEarned() + "\nTotal Teachers: " + getTeacherCount()
-                + "\nTotal Students: " + getStudentCount() + "\nTotal Salary Spent: " + getTotalMoneySpent() + "\n";
+        return "School{" +
+                "student=" + student +
+                ", teacher=" + teacher +
+                ", classroom=" + classroom +
+                ", schoolName='" + schoolName + '\'' +
+                ", teacherList=" + teacherList +
+                ", studentList=" + studentList +
+                ", classList=" + classList +
+                '}';
     }
 }

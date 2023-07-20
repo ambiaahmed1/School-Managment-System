@@ -156,6 +156,10 @@ public class Main {
                     Menu.menuPromptEleven(scanner, classList, college);
                     break;
 
+                case 17:
+                    Menu.allSchoolData(college, classList, studentList, teacherList);
+                    break;
+
                 default:
                     System.out.println("Invalid");
                     break;
